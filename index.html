@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RR vs KKR</title>
+  <style>
+body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #1c1c1c, #2c3e50);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Telegram Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 15px 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .header a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            background: linear-gradient(135deg, #0088cc, #006699);
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
+        }
+
+        .header a:hover {
+            background: linear-gradient(135deg, #006699, #004466);
+            box-shadow: 0 6px 15px rgba(0, 102, 153, 0.5);
+        }
+
+        .header span {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* Live Match Text */
+        .live-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: skyblue;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 20px 0;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Video Player Container */
+        #videoContainer {
+            background: rgba(68, 68, 68, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+            background: black;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Quality Buttons */
+        .btn-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #666, #555);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #777, #666);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Match Name */
+        .match-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 25px;
+            color: #fff;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Match Poster */
+        .match-poster {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 10px 20px;
+            }
+
+            .header a {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .header span {
+                font-size: 18px;
+            }
+
+            .live-text {
+                font-size: 20px;
+            }
+
+            .match-title {
+                font-size: 28px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+   
+  </style>
+</head>
+
+<body>
+  <!-- Telegram Channel Section -->
+  <div class="header">
+    <span>Team Delta</span>
+    <a href="https://t.me/Team_Delta" target="_blank"><b>Join Telegram</b></a>
+  </div>
+
+  <!-- Live Streaming Text -->
+  <div class="live-text">⚡ Match is Streaming Live 🔴<br><br>Powered By Nomis</div>
+
+  <!-- Video Embed Section -->
+  <div id="videoContainer">
+    <iframe src="https://iframv2.embedxt.site/iframe/frame.php" frameborder="0" allowfullscreen style="width: 100%; height: 500px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
+    </iframe>
+  </div>
+
+  <!-- Match Name -->
+  <div class="match-title">RR vs KKR</div>
+
+  <!-- Match Poster -->
+  <img class="match-poster" src="https://assets-in.bmscdn.com/nmcms/events/banner/mobile/media-mobile-rajasthan-royals-vs-kolkata-knight-riders-0-2025-2-20-t-15-33-14.jpg" alt="Match Poster">
+
+</body>
+
+</html>
