@@ -4,168 +4,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SRH vs LSG</title>
+  <title>SRH vs LSG Live Stream</title>
   <style>
-body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #1c1c1c, #2c3e50);
-            color: white;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #1c1c1c, #2c3e50);
+      color: white;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        /* Telegram Section */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgba(51, 51, 51, 0.8);
-            padding: 15px 30px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 800px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            margin-bottom: 20px;
-        }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(51, 51, 51, 0.8);
+      padding: 15px 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 800px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+    }
 
-        .header a {
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-            background: linear-gradient(135deg, #0088cc, #006699);
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
-        }
+    .header a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      background: linear-gradient(135deg, #0088cc, #006699);
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
+    }
 
-        .header a:hover {
-            background: linear-gradient(135deg, #006699, #004466);
-            box-shadow: 0 6px 15px rgba(0, 102, 153, 0.5);
-        }
+    .header a:hover {
+      background: linear-gradient(135deg, #006699, #004466);
+      box-shadow: 0 6px 15px rgba(0, 102, 153, 0.5);
+    }
 
-        .header span {
-            font-size: 20px;
-            font-weight: bold;
-            color: #fff;
-        }
+    .header span {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
 
-        /* Live Match Text */
-        .live-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: skyblue;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px 20px;
-            border-radius: 25px;
-            margin: 20px 0;
-            display: inline-block;
-            animation: pulse 2s infinite;
-        }
+    .live-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: skyblue;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 25px;
+      margin: 20px 0;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
 
-        /* Video Player Container */
-        #videoContainer {
-            background: rgba(68, 68, 68, 0.8);
-            padding: 20px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 800px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+    #videoContainer {
+      background: rgba(68, 68, 68, 0.8);
+      padding: 20px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 800px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
 
-        video {
-            width: 100%;
-            border-radius: 10px;
-            background: black;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
+    video {
+      width: 100%;
+      border-radius: 10px;
+      background: black;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
 
-        /* Quality Buttons */
-        .btn-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
+    .controls {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
 
-        .btn {
-            background: linear-gradient(135deg, #666, #555);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            cursor: pointer;
-            border-radius: 25px;
-            font-size: 16px;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
+    .controls button {
+      padding: 8px 15px;
+      background: linear-gradient(135deg, #0088cc, #006699);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-        .btn:hover {
-            background: linear-gradient(135deg, #777, #666);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-        }
+    .controls button:hover {
+      background: linear-gradient(135deg, #006699, #004466);
+    }
 
-        /* Match Name */
-        .match-title {
-            font-size: 32px;
-            font-weight: bold;
-            margin-top: 25px;
-            color: #fff;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
+    .match-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 25px;
+      color: #fff;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
 
-        /* Match Poster */
-        .match-poster {
-            margin-top: 20px;
-            width: 100%;
-            max-width: 600px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
+    .match-poster {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header {
-                padding: 10px 20px;
-            }
+    @media (max-width: 768px) {
+      .header {
+        padding: 10px 20px;
+      }
 
-            .header a {
-                padding: 8px 16px;
-                font-size: 14px;
-            }
+      .header a {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
 
-            .header span {
-                font-size: 18px;
-            }
+      .header span {
+        font-size: 18px;
+      }
 
-            .live-text {
-                font-size: 20px;
-            }
+      .live-text {
+        font-size: 20px;
+      }
 
-            .match-title {
-                font-size: 28px;
-            }
+      .match-title {
+        font-size: 28px;
+      }
 
-            .btn {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-        }
-   
+      video {
+        height: auto;
+      }
+    }
   </style>
 </head>
 
@@ -181,8 +170,10 @@ body {
 
   <!-- Video Embed Section -->
   <div id="videoContainer">
-    <iframe src="https://myctxa.temycssme.wiki/720p.m3u8" 
-    </iframe>
+    <video controls autoplay>
+      <source src="https://myctxa.temycssme.wiki/720p.m3u8" type="application/x-mpegURL">
+      Your browser does not support the video tag.
+    </video>
   </div>
 
   <!-- Match Name -->
@@ -191,6 +182,57 @@ body {
   <!-- Match Poster -->
   <img class="match-poster" src="https://img.jagranjosh.com/images/2025/March/2732025/srh-vs-lsg-match-date-time-head-to-head-records-when-and-where-to-watch-live-streaming.webp" alt="Match Poster">
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const fullscreenBtn = document.getElementById('fullscreenBtn');
+      const pageFullscreenBtn = document.getElementById('pageFullscreenBtn');
+      const videoContainer = document.getElementById('videoContainer');
+      const video = document.querySelector('video');
+      
+      // Toggle fullscreen for the video element
+      fullscreenBtn.addEventListener('click', function() {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) { /* Safari */
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) { /* IE11 */
+          video.msRequestFullscreen();
+        }
+      });
+      
+      // Toggle fullscreen for the entire page
+      pageFullscreenBtn.addEventListener('click', function() {
+        if (!document.fullscreenElement) {
+          if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+          } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+            document.documentElement.webkitRequestFullscreen();
+          } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+            document.documentElement.msRequestFullscreen();
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) { /* Safari */
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) { /* IE11 */
+            document.msExitFullscreen();
+          }
+        }
+      });
+
+      // Also allow double-click on video to enter fullscreen
+      video.addEventListener('dblclick', function() {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          video.msRequestFullscreen();
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
